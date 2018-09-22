@@ -1,0 +1,11 @@
+task_edit:
+  path: /task/{id}/edit
+  defaults: { _controller: TaskBundle:Task:edit }
+  requirements:
+        id: '\d+'
+
+task_delete:
+  path: /task/{id}/delete
+  defaults: { _controller: TaskBundle:Task:remove }
+  requirements:
+        id: '\d+'

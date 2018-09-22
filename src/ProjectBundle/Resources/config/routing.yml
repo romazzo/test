@@ -1,0 +1,23 @@
+page_list:
+  path: /page
+  defaults: { _controller: ProjectBundle:Project:list }
+
+page_add:
+  path: /page/add
+  defaults: { _controller: ProjectBundle:Project:add }
+
+#page_view:
+#  path: /add
+#  defaults: { _controller: ProjectBundle:Project:view }
+
+page_edit:
+  path: /page/{id}/edit
+  defaults: { _controller: ProjectBundle:Project:edit }
+  requirements:
+        id: '\d+'
+
+page_delete:
+  path: /page/{id}/delete
+  defaults: { _controller: ProjectBundle:Project:remove }
+  requirements:
+        id: '\d+'

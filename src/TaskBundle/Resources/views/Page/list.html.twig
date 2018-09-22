@@ -1,0 +1,32 @@
+{% extends "@App/Layout/layout-two-col-8-4.html.twig" %}
+
+{% block regionRight %}
+
+<h3>SIMPLE TODO LISTS</h3>
+<p>FROM  GARAGE</p><br>
+
+
+    <div class="block block-page-list">
+        <div class="title">
+            <div class="list list-page-list">
+                {% for page in pages %}
+                    <div class="list-item">
+                        <div class="fields">{{ page.name }}</div>
+                        <a class="fields field-edit" href="/page/{{ page.id }}/edit">Edit</a>
+                        <a class="fields field-delete" href="/page/{{ page.id }}/delete">Delete</a>
+
+
+
+                    {% for items in page.tasks %}
+                        <div class="list-task">
+                            <div class="list-task-name">{{ items.name }} </div>
+                        </div>
+                    {% endfor %}<br>
+                {% endfor %}
+            </div><br>
+            <div class="field field-page-link"><a href="page/add">Add TODO List</a></div>
+
+        </div>
+    </div>
+
+{% endblock %}
